@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>My Journey</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,83 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <!-- landing visual: register/sign-in-->
+      <section id="before-sign-in">
+      <div class="col-12">
+        <!--<button id="sign-out" class="btn btn-primary ml-auto p-2">Sign out</button> -->
+        <img id="background-image" src="homepage-background-b.jpg" class="img-fluid" alt="homepage-background">
+      </div>
+
+
+        <div class="limiter">
+          <div class="container-login">
+            <div class="wrap-login">
+              <form class="login-form validate-form">
+                <span class="login-form-title">
+                  Welcome
+                </span>
+
+                <!-- landing visual: register-->
+                <form id="sign-up" class="d-flex flex-column">
+                  <fieldset>
+                    <div class="row-1">
+                      <div class="col">
+                        <input type="email" name="credentials[email]" placeholder="Email" required>
+                      </div>
+                    </div>
+                    <div class="row-1">
+                      <div class="col">
+                        <input type="password" name="credentials[password]" placeholder="Password" required>
+                      </div>
+                    </div>
+                    <div class="row-1">
+                      <div class="col">
+                        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+                      </div>
+                    </div>
+                    <div class="sign-up-container">
+                      <input type="submit">
+                      <!-- <button class="btn btn-warning" role="button" aria-pressed="true">Sign Up</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+                <hr>
+                <!-- landing visual: sign-in-->
+                <form id="sign-in">
+                  <fieldset>
+                    <div class="row-1">
+                      <div class="col">
+                        <input type="email" name="credentials[email]" placeholder="Email" required>
+                      </div>
+                    </div>
+                    <div class="row-1">
+                      <div class="col">
+                        <input type="password" name="credentials[password]" placeholder="Password" required>
+                      </div>
+                    </div>
+                    <div class="login-container">
+                        <button class="btn btn-warning" role="button" aria-pressed="true">Login</button>
+                    </div>
+                  </fieldset>
+                </form>
+
+              </form>
+            </div>
+          </div>
+        </div>
+</section>
+
+<!-- landing visual: register/sign-in-->
+<section id="after-sign-in">
+<button id="sign-out" class="btn btn-primary ml-auto p-2">Sign out</button>
+
+</section>
+
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="user-display"></div>
+      </section>
+
     </body>
 </html>

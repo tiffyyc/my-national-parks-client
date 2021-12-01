@@ -21,6 +21,11 @@
 - As a user, I can update trails I went to.
 - As a user, I can delete trails.
 
+## Technologies Used
+- jQuery
+- HTML/CSS
+- Bootstrap
+- Javascript
 
 ## Wireframes
 ![wireframes](https://imgur.com/7vZ5m1Z)
