@@ -41,12 +41,13 @@ const signOut = function () {
 	})
 }
 
-const changePassword = function () {
+const changePassword = function (formData) {
 	// make a request to PATCh (change-password)
 	return $.ajax({
 		url: `${config.apiUrl}/change-password`,
 		method: 'PATCH',
 		// add our authorization header, so the api can use the token to know who is trying to change the password
+		data: formData,
 		headers: {
 			Authorization: 'Bearer ' + store.user.token,
 		},

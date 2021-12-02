@@ -2,7 +2,7 @@
 // require the store object, we will use it to share data between different files
 const store = require('../store')
 
-$('#sign-out').hide()
+$('#after-sign-in').hide()
 
 const signUpSuccess = function (responseData) {
 	// tell the user signup is successful
@@ -12,7 +12,7 @@ const signUpSuccess = function (responseData) {
 
 	// remove existing classes and add a bootstrap class - text-success
 	$('#user-display').removeClass()
-	$('#user-display').addClass('text-white')
+	$('#user-display').addClass('text-dark')
 
 	// clear(reset) all of the forms
 	$('form').trigger('reset')
@@ -61,6 +61,7 @@ const signInSuccess = function (responseData) {
 	$('#before-sign-in').hide()
 	// after we sign in, hide the grid until 'new game' button is clicked
 	$('#after-sign-in').show()
+	$('#sign-out').show()
 
 	console.log('responseData is', responseData)
 }
