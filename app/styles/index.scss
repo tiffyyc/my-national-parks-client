@@ -17,6 +17,15 @@ h4 {
   font-weight:200;
 }
 
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  font-weight:400;
+}
+
 #background-image {
   position:absolute;
   left: 0px;
@@ -60,7 +69,11 @@ h4 {
   -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
-/*-----------------------form-----------------------------*/
+#confirm-btn{
+  margin-top:2%;
+}
+
+/*-----------------------login form-----------------------------*/
 .login-form {
   width: 100%;
 }
@@ -119,3 +132,42 @@ h4 {
   width: 100%;
   height: 50px;       
 }
+
+/*-----------------------dropdown menu--------------------------*/
+.dropdown-menu{
+  width:100%;
+  margin: 0 auto;
+}
+
+
+/*------------------------------------*/
+#park-create{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin-bottom: 3%;
+}
+
+.park-name{
+  font-size: 40px;
+  line-height:1.2;
+}
+
+.park-location{
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top:1%;
+}
+
+.park-description{
+  font-size: 14px;
+  margin-top:1%;
+}
+
+.park-id{
+  font-size: 14px;
+  margin-bottom: 2%;
+}
+

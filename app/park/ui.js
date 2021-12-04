@@ -2,6 +2,7 @@
 // require the store object, we will use it to share data between different files
 const store = require('../store') 
 
+$('#after-sign-in').hide()
 // a function to run when we successfully get all the books from the API
 const onIndexParksSuccess = function (responseData) {
 	// extract the books from our response data into a variable to make it easier to use
@@ -16,22 +17,63 @@ const onIndexParksSuccess = function (responseData) {
 	parks.forEach((park) => {
 		// add html for each book to the parksHtml variable
 		parksHtml += `
-        <div>
-        <h4>Name: ${park.name}</h4>
-        <p>Location: ${park.location}</p>
-        <p>Description: ${park.description}</p>
-        <p>Owner: ${park._id}</p>
-  <!-- Add park's id to the delete button. we can access it with jQuery's data() method later in events.js-->
-        <button class="parks-destroy-dynamic" data-id=${park._id} data-title="${park.name}">
-        delete book</button>
+        <div class="container">
+			<div class="row">
+        		<div class="col-4">
+				<div class="park-name">${park.name}</div>
+        		<div class="park-location">${park.location}</div>
+				</div>
+			
+        		<div class="col-8">
+				<div class="park-description">${park.description}</div>
+        		<!--<div class="park-id">Park ID: ${park._id}</div>-->
 
-        <form class="parks-update-dynamic" data-id=${park._id}>
-            <input type="text" name="park[name]" placeholder="Name" required>
-            <input type="text" name="park[location]" placeholder="Location" required>
-            <input type="text" name="park[description]" placeholder="Description" required>
-            
-              <button>update park</button>
-              </form>
+				
+					<div class="row">
+						<div class="col-4">
+						<!-- dropdown menu -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+								aria-expanded="false">Update</a>
+								
+								<ul class="dropdown-menu">
+									<li>
+										<form class="parks-update-dynamic" data-id=${park._id}>
+								<fieldset>
+
+									<div class="row-1 px-2">
+										<label class="form-label"></label>
+										<input type="text" class="form-control" name="park[name]" placeholder="Name" required>
+									</div>
+
+									<div class="row-1 px-2">
+										<label class="form-label"></label>
+										<input type="text" class="form-control" name="park[location]" placeholder="Location" required>
+									</div>
+
+									<div class="row-1 px-2">
+  										<label class="form-label"></label>
+  										<input textarea class="form-control" rows="3" name="park[description]" placeholder="Description" required></textarea>
+									</div>
+
+									<div class="px-2">
+									<button id="confirm-btn" class="btn btn-secondary ">Submit</button>
+									</div>
+								</fieldset>
+										</form>
+									</li>
+								</ul>
+								
+							</li>
+						</div>
+
+						<div class="col-8">
+							<button class="parks-destroy-dynamic btn btn-secondary" data-id=${park._id} data-title="${park.name}">Delete</button>
+						</div>
+					 </div>
+				</div>
+			</div>	
+			<hr>
         </div>
         `
 	})

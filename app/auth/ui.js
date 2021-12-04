@@ -47,7 +47,7 @@ const signInSuccess = function (responseData) {
 
 	// remove existing classes and add a bootstrap class - text-success
 	$('#user-display').removeClass()
-	$('#user-display').addClass('text-white')
+	$('#user-display').addClass('text-dark')
 
 	// set time to disappear text after 1 sec
 	setTimeout(() => {
@@ -89,7 +89,7 @@ const signOutSuccess = function (id) {
 
 	// remove existing classes and add a bootstrap class - text-success
 	$('#user-display').removeClass()
-	$('#user-display').addClass('text-white')
+	$('#user-display').addClass('text-dark')
 
 	// set time to disappear
 	setTimeout(() => {
@@ -120,7 +120,12 @@ const changePasswordSuccess = function (responseData) {
 
 	// remove existing classes and add a bootstrap class - text-success
 	$('#user-display').removeClass()
-	$('#user-display').addClass('text-success')
+	$('#user-display').addClass('text-dark')
+
+	// set time to disappear text after 1 sec
+	setTimeout(() => {
+		$('#user-display').text('')
+	}, 1000)
 
 	// clear(reset) all of the forms
 	$('form').trigger('reset')

@@ -16,16 +16,16 @@ $(() => {
 	// park 
 	$('#parks-index').on('click', parkEvents.onIndexParks)
 	$('#park-create').on('submit', parkEvents.onCreatePark)
-	$('#park-update').on('submit', parkEvents.onUpdatePark)
-	$('#park-destroy').on('submit', parkEvents.onDestroyPark)
-	$('#park-show').on('submit', parkEvents.onShowPark)
-	  $('#park-display').on(
+	// $('#park-update').on('submit', parkEvents.onUpdatePark)
+	// $('#park-destroy').on('submit', parkEvents.onDestroyPark)
+	// $('#park-show').on('submit', parkEvents.onShowPark)
+    $('#park-display').on(
 			'click',
 			'.parks-destroy-dynamic',
 			parkEvents.onDynamicDestroyPark
 		)
 
-		$('#park-display').on(
+    $('#park-display').on(
 			'submit',
 			'.parks-update-dynamic',
 			parkEvents.onDynamicUpdatePark

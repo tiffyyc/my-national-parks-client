@@ -12,6 +12,13 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="user-display"></div>
+        
+      </section>
+
       <!-- landing visual: register/sign-in-->
       <section id="before-sign-in">
       <div class="col-12">
@@ -79,82 +86,62 @@
 <!-- landing visual: register/sign-in-->
 <section id="after-sign-in">
   <!--nav bar-->
-  <ul class="nav nav-pills">
+  <ul class="nav justify-content-end">
+    <!-- show all tab -->
+    <li class="nav-item">
+      <a class="nav-link" id="parks-index">My Parks</a>
+    </li>
+    <!-- dropdown menu -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
         aria-expanded="false">Profile</a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Change Password</a></li>
-        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+        <li><a class="dropdown-item">Change Password</a>
+        <form id="change-password">
+          <fieldset>
+            <div class="row-1 px-2">
+              
+              <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password" required>
+            </div>
+            <div class="row-1 px-2">
+             
+              <input type="password" class="form-control" name="passwords[new]" placeholder="New Password" required>
+            </div>
+
+            <div class="px-2">
+              <button id="confirm-btn" class="btn btn-secondary ">Confirm</button>
+            </div>
+
+          </fieldset>
+        </form>
+
+      <hr>
+
+      </li>
+        <li><a class="dropdown-item" id="sign-out">Sign out</a></li>
       </ul>
     </li>
   </ul>
   <!----------------------------------------------------------->
-  <form id="change-password" class="border">
-    <fieldset>
-      <legend>Change Password</legend>
-  
-      <input type="password" name="passwords[old]" placeholder="Old Password" required>
-      <input type="password" name="passwords[new]" placeholder="New Password" required>
-  
-      <button class="btn btn-secondary">submit</button>
-    </fieldset>
-  </form>
-<button id="sign-out" class="btn btn-primary ml-auto p-2">Sign out</button>
+ 
 
 <!----------------------------------------------------------->
-<section>
-  <h2>View all</h2>
-  <button id="parks-index">See all</button>
-  <hr>
+  
+    
+      <form id="park-create">
+        <input type="text" name="park[name]" placeholder="Name" required>
+        <input type="text" name="park[location]" placeholder="Location" required> <br>
+        <input type="text" name="park[description]" placeholder="Description" required>
+      
+        <button class="btn btn-primary ml-auto p-2">Create</button>
+      </form>
 
-  <h2>Get one park</h2>
-  <form id="park-show">
-    <input type="text" name="park[id]" placeholder="Park ID" required>
-    <!-- since this button is inside a form, it has the type="submit" by default. which means if the button is clicked, the form is submitted-->
-    <button>Submit</button>
-  </form>
-  <hr>
-
-  <h2>Delete park</h2>
-  <form id="park-destroy">
-    <input type="text" name="park[id]" placeholder="Park ID" required>
-
-    <button>Delete</button>
-  </form>
-  <hr>
-
-  <h2>Update park</h2>
-  <form id="park-update">
-    <input type="text" name="park[id]" placeholder="Park ID" required>
-    <input type="text" name="park[name]" placeholder="Name" required>
-    <input type="text" name="park[location]" placeholder="Location" required>
-    <input type="text" name="park[description]" placeholder="Description" required>
-
-    <button>Update</button>
-  </form>
-  <hr>
-
-  <h2>Create park</h2>
-  <form id="park-create">
-    <input type="text" name="park[name]" placeholder="Name" required>
-    <input type="text" name="park[location]" placeholder="Location" required>
-    <input type="text" name="park[description]" placeholder="Description" required>
-
-    <button>Create</button>
-  </form>
-  <hr>
-</section>
+  <div id="park-display"></div>
 
 
 </section>
 
-      <!-- create a section for our user feedback -->
-      <section>
-        <div id="error-message"></div>
-        <div id="user-display"></div>
-        <div id="park-display"></div>
-      </section>
+      
 
     </body>
 </html>
