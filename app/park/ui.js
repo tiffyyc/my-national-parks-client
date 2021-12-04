@@ -31,9 +31,16 @@ const onIndexParksSuccess = function (responseData) {
 				
 					<div class="row">
 						<div class="col-4">
-						<!-- dropdown menu -->
+						<!-- collapse menu -->
+						 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    					Update</button>
+						<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" 
 								aria-expanded="false">Update</a>
 								
 								<ul class="dropdown-menu">
