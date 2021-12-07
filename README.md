@@ -2,8 +2,12 @@
 # My National Park App - client
 
 ## Summary
+This full stack application is designed for users keeping track of their experience in national parks they have visited.
+
+Once user signed up and/or signed in, user can add parks they visited. User can update or delete each park. They can also change password and sign out under the profile dropdown menu.
 
 ## Important Links
+https://tiffyyc.github.io/my-national-parks-client/
 
 ## User Stories
 - As a user, I can sign up to an account with email address.
@@ -28,4 +32,4 @@
 - Javascript
 
 ## Wireframes
-![wireframes](https://imgur.com/7vZ5m1Z)
+![wireframes](wireframes.jpg)

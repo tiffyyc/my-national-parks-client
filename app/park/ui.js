@@ -22,62 +22,54 @@ const onIndexParksSuccess = function (responseData) {
         		<div class="col-4">
 				<div class="park-name">${park.name}</div>
         		<div class="park-location">${park.location}</div>
+        		<div class="park-id">ID: ${park._id}</div>
+					<div class="row">
+						<div class="col-4">
+						 <!-- update dropdown menu -->
+						 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">Update</button>
+
+							<ul class="dropdown-menu col-8">
+								
+								<form class="parks-update-dynamic col-8" data-id=${park._id}>
+								<fieldset>
+									<div class="row-2 d-flex px-2">
+									<div class="col-3 d-flex px-2">
+									<label class="form-label"></label>
+									<input type="text" class="form-control" name="park[name]" placeholder="Name" required>
+									</div>
+									
+									<div class="col-3 d-flex px-2">
+									<label class="form-label"></label>
+									<input type="text" class="form-control" name="park[location]" placeholder="Location" required>
+									</div>
+									
+									</div>
+
+
+									<div class="row-3 col-6 px-3">
+  										<label class="form-label"></label>
+  										<input type="text" class="form-control" name="park[description]" placeholder="Description" required></textarea>
+									</div>
+
+									<div class="px-3 py-3">
+									<button class="btn btn-secondary ">Submit</button>
+									</div>
+								</fieldset>
+								</form>
+								
+							</ul>
+						</div>
+
+						<div class="col-8">
+							<button class="parks-destroy-dynamic btn btn-secondary btn-sm" data-id=${park._id} data-title="${park.name}">Delete</button>
+						</div>
+
+					 </div>
 				</div>
 			
         		<div class="col-8">
 				<div class="park-description">${park.description}</div>
-        		<!--<div class="park-id">Park ID: ${park._id}</div>-->
 
-				
-					<div class="row">
-						<div class="col-4">
-						<!-- collapse menu -->
-						 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    					Update</button>
-						<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-  </div>
-</div>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" 
-								aria-expanded="false">Update</a>
-								
-								<ul class="dropdown-menu">
-									<li>
-										<form class="parks-update-dynamic" data-id=${park._id}>
-								<fieldset>
-
-									<div class="row-1 px-2">
-										<label class="form-label"></label>
-										<input type="text" class="form-control" name="park[name]" placeholder="Name" required>
-									</div>
-
-									<div class="row-1 px-2">
-										<label class="form-label"></label>
-										<input type="text" class="form-control" name="park[location]" placeholder="Location" required>
-									</div>
-
-									<div class="row-1 px-2">
-  										<label class="form-label"></label>
-  										<input textarea class="form-control" rows="3" name="park[description]" placeholder="Description" required></textarea>
-									</div>
-
-									<div class="px-2">
-									<button id="confirm-btn" class="btn btn-secondary ">Submit</button>
-									</div>
-								</fieldset>
-										</form>
-									</li>
-								</ul>
-								
-							</li>
-						</div>
-
-						<div class="col-8">
-							<button class="parks-destroy-dynamic btn btn-secondary" data-id=${park._id} data-title="${park.name}">Delete</button>
-						</div>
-					 </div>
 				</div>
 			</div>	
 			<hr>
